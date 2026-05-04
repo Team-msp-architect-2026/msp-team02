@@ -1,0 +1,48 @@
+name: 📝 회의록
+description: 팀 회의 기록
+labels: ["📝 meeting"]
+body:
+  - type: dropdown
+    id: team
+    attributes:
+      label: 팀
+      options:
+        - kim-minsoo (김민수)
+    validations:
+      required: true
+  - type: input
+    id: datetime
+    attributes:
+      label: 일시
+      placeholder: "YYYY-MM-DD HH:MM ~ HH:MM"
+    validations:
+      required: true
+  - type: input
+    id: attendees
+    attributes:
+      label: 참석자
+      placeholder: "이름1, 이름2, 이름3"
+    validations:
+      required: true
+  - type: textarea
+    id: agenda
+    attributes:
+      label: 안건 및 논의 내용
+      placeholder: |
+        ### 안건 1: [제목]
+        - 논의 내용
+
+        ### 안건 2: [제목]
+        - 논의 내용
+    validations:
+      required: true
+  - type: textarea
+    id: decisions
+    attributes:
+      label: 결정 사항
+      placeholder: "- 결정 1\n- 결정 2"
+  - type: textarea
+    id: action_items
+    attributes:
+      label: Action Items
+      placeholder: "- [ ] 이름: 할 일 (마감: MM/DD)"
