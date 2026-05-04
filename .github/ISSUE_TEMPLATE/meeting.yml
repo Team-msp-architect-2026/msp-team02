@@ -7,7 +7,7 @@ body:
     attributes:
       label: 팀
       options:
-        - kim-minsoo (김민수)
+        - 김종원
     validations:
       required: true
   - type: input
