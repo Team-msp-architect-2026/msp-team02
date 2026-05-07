@@ -1,150 +1,86 @@
-# law_main_road (아직 초안 문서입니다. 이 저장소는 프로젝트 마무리 후 결과 코드 및 문서만을 다룹니다. 개발과정은 저희 팀의 organization에서 확인하실 수 있습니다. 마무리 문서 작업 후 팀 organization을 공개하도록 하겠습니다.)
+# 법대로(LawMainRoad)
 
-외국인 근로자를 포함한 취약 노동자를 위한 노동권 보호 AI MVP입니다.
+외국인 근로자를 위한 노동권 보호 통합 AI MVP입니다.
 
-현재 저장소는 법령 RAG, grounded answer generation, SCN-004 문서 초안,
-SCN-001 Firebase Auth 기반 Before/Bridge/After 연결, 기록 조회/삭제 UI까지
-구현한 상태입니다.
+법대로(LawMainRoad)는 근로계약, 기숙사, 임금체불, 부당해고, 사업장 변경
+같은 노동 문제를 한국 노동법 근거와 함께 정리하도록 돕는 프로젝트입니다.
+이 저장소는 공모전 제출과 공개 검토를 위한 curated public mirror입니다.
 
-## Current Status
+## 공개 문서
 
-기준일: `2026-05-04`
+상세 문서는 GitHub Wiki에서 확인할 수 있습니다.
 
-- law corpus: `backend/data/law_chunks/all_chunks.json`
-- selected snapshot: `selected_as_of = 2026-04-11`
-- live chunks: `1722`
-- backend: FastAPI + PostgreSQL + pgvector
-- frontend: Next.js `16.2.4`, React `19.2.5`
-- auth: Firebase Auth Google Sign-In + backend Firebase Admin verification
-- answer model default: `gemini-2.5-flash`
-- embedding model default: `gemini-embedding-001`, `768` dimensions
-- latest main checkpoint: `e79fa68`
+- [Wiki Home](https://github.com/Team-msp-architect-2026/msp-team02/wiki)
+- [프로젝트 수행 및 완성](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Project-Execution-and-Completion)
+- [최종 아키텍처](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture)
+- [사용자 흐름](https://github.com/Team-msp-architect-2026/msp-team02/wiki/User-Flows)
+- [API 엔드포인트와 스키마](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)
+- [클라우드 전환과 공개 미러 정책](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)
 
-Implemented user routes:
+## 핵심 기능
 
-- `/`
-- `/before`
-- `/after`
-- `/after/result`
-- `/after/intake`
-- `/after/draft`
-- `/history`
+- 한국 노동법 기반 검색과 근거 중심 답변
+- SCN-004 After 답변 및 문서 초안 흐름
+- SCN-001 Before -> Bridge -> After 연결 흐름
+- Firebase Google Sign-In 기반 protected SCN-001 경로
+- 사용자 기록 조회와 MVP soft-delete
+- 데모 안정성을 위한 fixed preset path
 
-Main implemented flows:
+## 구현 범위
 
-- SCN-004 login-free After flow:
-  `/after -> /after/result -> /after/intake -> /after/draft`
-- SCN-001 protected Before/Bridge/After answer linkage
-- SCN-001 protected history archive and MVP soft-delete
-- SCN-001 exact fixed-preset frontend-local frozen draft flow
-- SCN-004 exact fixed-preset answer fixture for stable demo rehearsal
-- integrated frontend UI polish through visual checkpoint `85d10fa`, with
-  later workspace/draft-scope documentation alignment through `e79fa68`:
-  - Before first screen is upload-focused, removes local server/demo copy,
-    preserves examples, improves loading scroll and OCR 1~2분 guidance, cleans
-    result/accessibility layout, and removes hardcoded default accessibility
-    legal basis
-  - After entry is centered, adds guidance cards, improves preset display labels
-    without changing preset id/query, restores the entry disclaimer, and uses
-    primary-blue / success-green saved-history connection accents
-  - History is centered with readable folded incident cards and blue left accent
-  - Main page has cleaner H1/lead/nav typography and a compact flow strip
-  - `DESIGN.md` is the current visual guide: token-first,
-    neutral/dense/evidence-led, with disclaimers and uncertainty prominent
+현재 공개 문서 기준 구현 범위:
 
-Not opened:
+- SCN-004 login-free After flow
+- SCN-001 backend-verified protected flow
+- 법령 corpus 기반 RAG와 citation grounding
+- PostgreSQL + pgvector 기반 검색 foundation
+- Next.js frontend와 FastAPI backend
+- Firebase Auth Google Sign-In + backend verification
 
-- live/backend SCN-001 document draft generation
+현재 미오픈(NOT opened) 범위:
+
+- SCN-001 live/backend document draft generation
 - protected SCN-001 draft endpoint
 - independent `/bridge` route
 - Recovery implementation
 - SCN-005 frontend/document draft expansion
-- Step 3 full retention lifecycle
-- public contract changes for `/api/v1/answer` or `/api/v1/documents/draft`
+- full retention lifecycle, hard delete, artifact file purge
+- production deployment claim
 
-## GitHub Docs
+## 아키텍처 요약
 
-Readable GitHub-facing docs are separated from internal planning notes:
-
-- [docs/github/README.md](docs/github/README.md)
-- [docs/github/project-overview.md](docs/github/project-overview.md)
-- [docs/github/system-architecture.md](docs/github/system-architecture.md)
-- [docs/github/user-flows.md](docs/github/user-flows.md)
-- [docs/github/api-reference.md](docs/github/api-reference.md)
-- [docs/github/runbook.md](docs/github/runbook.md)
-
-Internal phase records remain under `docs/planning/`. The current code-based
-checkpoint is
-[docs/planning/23_code_based_status_2026_04_29.md](docs/planning/23_code_based_status_2026_04_29.md).
-
-## Repository Layout
-
-| Path | Role |
-|---|---|
-| `backend/` | FastAPI app, retrieval, answer generation, document draft, auth, DB |
-| `frontend/` | Next.js app routes and UI state |
-| `scripts/` | legal corpus preprocessing pipeline |
-| `data/legalize-kr/` | upstream law source submodule |
-| `backend/data/law_chunks/` | processed law chunk output |
-| `docs/planning/` | internal phase/status planning notes |
-| `docs/github/` | public-facing GitHub documentation |
-| `docs/product/` | product flow notes |
-| `docs/ops/` | local setup and operations notes |
-| `eval/` | retrieval/answer eval assets |
-
-## Quick Start
-
-Backend:
-
-```bash
-conda activate law_main_road
-pip install -r backend/requirements.txt
-uvicorn backend.main:app --reload
+```text
+Legal source data
+  -> chunking pipeline
+  -> PostgreSQL + pgvector
+  -> FastAPI retrieval / answer / draft / auth APIs
+  -> Next.js user flows
 ```
 
-Frontend:
+AI path는 Vertex AI Gemini와 embedding 기반 검색을 사용합니다. 문서 초안은
+지원되는 시나리오에서 answer-derived legal basis를 근거로 생성되며, 사용자가
+입력하지 않은 사실은 단정하지 않습니다.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## Demo / Cloud Posture
 
-Default URLs:
+이 public mirror는 공모전 검토와 공개 문서 확인을 위한 저장소입니다.
 
-- backend: `http://localhost:8000`
-- frontend: `http://localhost:5090`
+- cloud migration은 dev-first로 진행합니다.
+- demo/contest는 기간이 정해진 public presentation posture입니다.
+- prod는 별도 production-opening review 전까지 미오픈(NOT opened)입니다.
+- 이 mirror는 deploy authority가 아닙니다.
 
-Environment templates:
+## 보안과 개인정보 경계
 
-- [backend/.env.example](backend/.env.example)
-- [frontend/.env.example](frontend/.env.example)
+공개 저장소와 Wiki에는 다음 정보를 포함하지 않습니다.
 
-## Verification
+- credential values, local env values, cloud IAM key files
+- raw user/case facts, full answer/draft payloads, raw Bridge payloads
+- auth-provider subject identifiers, email values, database account identifiers
+- exact private cloud resource identifiers, cloud secret values, private runbook details
 
-Focused checks:
+Bridge는 사건 맥락 연결/참고용이며, 법적 근거(legal grounding)가 아닙니다.
 
-```bash
-python -c "from backend.main import app; print('import_ok')"
-python backend/verify/check_document_draft.py
-cd frontend
-npm run build
-```
+## License
 
-Demo preflight:
-
-```bash
-bash scripts/demo_preflight.sh
-```
-
-Run broad retrieval/answer eval only when retrieval, answer generation,
-embedding behavior, DB contents, or API response contracts change.
-
-## Privacy Boundaries
-
-- Do not commit credential JSON, local env files, DB files, Firebase ID tokens,
-  provider subjects, or raw email values.
-- Raw `user_statement`, full answer/draft payloads, case intake, raw Bridge
-  payloads, and raw `after_query_seed` are not stored in browser storage.
-- SCN-001 Bridge context is continuity/reference only, not legal grounding.
-- `data/legalize-kr/` and `backend/data/law_chunks/` are not edited directly.
+이 저장소의 라이선스는 [LICENSE](LICENSE)를 따릅니다.
