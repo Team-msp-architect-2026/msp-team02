@@ -6,101 +6,92 @@
 
 **공개 데모:** https://www.law-main-road.cloud
 
-이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구이며,
-법률 자문이나 행정기관의 판단을 대체하지 않습니다.
+이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구입니다.
+변호사 자문, 행정기관 판단, 법원의 판단을 대체하지 않습니다.
 
-이 공개 저장소는 공모전 제출과 공개 검토를 위한 정리본입니다.
-개발과 배포의 기준 저장소는 접근 권한이 필요한
+이 공개 저장소는 공모전 제출과 공개 검토를 위한 정리본입니다. 실제 개발과 배포
+자동화 기준은 접근 권한이 필요한
 [`2026-moel-datacontest-core/law_main_road_main`](https://github.com/2026-moel-datacontest-core/law_main_road_main)
-입니다(reviewer access required). 이 공개 저장소는 배포 권한이나 WIF 배포 권한을
-갖지 않습니다.
+저장소에서 관리합니다. 이 저장소에는 배포 권한, 비밀값, 내부 클라우드 운영 정보를
+두지 않습니다.
 
 ## 빠른 심사 흐름
 
-5분 안에 확인할 수 있는 public demo 흐름:
+5분 안에 확인할 수 있는 흐름입니다.
 
 1. https://www.law-main-road.cloud 를 엽니다.
-2. `/after`로 이동하거나 메인 화면의 법률 상담 흐름을 선택합니다.
+2. 메인 화면에서 AI 법률 상담을 선택합니다.
 3. 예시 사례에서 `임금체불·부당해고 상담`을 선택하고 제출합니다.
-4. `/after/result`에서 검색 근거, 인용 조문, 주의사항을 확인합니다.
-5. 지원되는 문서 유형을 선택해 `/after/intake`로 이동합니다.
-6. 필요한 사실관계를 입력한 뒤 `/after/draft`에서 초안, 누락 항목, 증거 체크리스트, copy/print 동작을 확인합니다.
+4. 답변 화면에서 법령 근거, 인용 조문, 주의사항을 확인합니다.
+5. 지원되는 문서 유형을 선택하고 필요한 사실관계를 입력합니다.
+6. 초안 화면에서 문서 본문, 추가로 필요한 정보, 증거 체크리스트, 복사와 인쇄 동작을 확인합니다.
 
-선택 확인 흐름:
+추가 확인 흐름:
 
-- Google login 후 `/before`에서 계약서 검토 결과를 법률 상담에 연결하는 흐름을 확인합니다.
-- `/history`에서 서버 인증이 확인된 사용자의 사건 기록 카드와 기록 삭제 동작을 확인합니다.
+- Google 로그인 후 계약서 검토 결과를 AI 법률 상담에 연결할 수 있습니다.
+- 사건 기록 화면에서 저장된 사건 카드와 기록 삭제(목록에서 숨김)를 확인할 수 있습니다.
 
 ## 공개 문서
 
-상세 문서는 GitHub Wiki를 canonical 공개 문서로 사용합니다. 이 README는 심사자가
-5분 안에 프로젝트 목적, 구현 범위, cloud migration 상태, 실행/검증 경계, 보안과
-개인정보 원칙을 빠르게 확인하기 위한 landing 문서입니다.
+상세 문서는 GitHub Wiki를 기준 공개 문서로 사용합니다. 이 README는 심사자가
+프로젝트 목적, 구현 범위, 공개 데모 상태, 보안·개인정보 경계를 빠르게 확인할 수
+있도록 정리한 첫 페이지입니다.
 
 주요 Wiki 링크:
 
 - [GitHub Wiki](https://github.com/Team-msp-architect-2026/msp-team02/wiki)
-- [Final-Architecture](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture)
-- [User-Flows](https://github.com/Team-msp-architect-2026/msp-team02/wiki/User-Flows)
-- [API-Endpoints-and-Schemas](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)
-- [Cloud-Migration-and-Public-Mirror-Policy](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)
+- [사용자 흐름](https://github.com/Team-msp-architect-2026/msp-team02/wiki/User-Flows)
+- [UI 화면 구성](https://github.com/Team-msp-architect-2026/msp-team02/wiki/UI-Screens)
+- [최종 아키텍처](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture)
+- [API 문서](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)
+- [클라우드 전환과 공개 미러 정책](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)
 
-내부 planning, architecture, operations 기록은 공개 Wiki와 README에 그대로
-노출하지 않습니다. 공개 문서는 현재 구현 기준과 공개 가능한 범위를 기준으로
-다시 정리한 내용입니다.
+내부 계획서와 운영 기록을 그대로 공개하지 않고, 현재 구현 상태와 공개 가능한
+범위만 다시 정리했습니다.
 
-## 현재 구현 범위
+## 현재 제공 기능
 
 기준일: `2026-05-12`
 
-- 로그인 없이 사용할 수 있는 AI 법률 상담과 문서 초안 흐름
-- 로그인 사용자용 계약서 검토, 사건 기록, 상담 연결 흐름
-- 사건 기록 보관함과 기록 삭제(목록에서 숨김)
-- `사업장 변경 사유 정리서 초안` 고정 예시 흐름
-- Firebase Auth Google Sign-In + backend verification
+- 로그인 없이 사용할 수 있는 AI 법률 상담
+- 법령 근거가 함께 제시되는 답변
+- 임금체불·부당해고 상담에서 이어지는 문서 초안 작성
+- 로그인 사용자용 계약서 검토, 사건 기록, 기록 삭제
+- 계약서 검토 결과를 AI 법률 상담에 연결하는 기능
+- `사업장 변경 사유 정리서 초안` 예시 작성
+- Google 로그인과 서버 인증 확인
 - PostgreSQL + pgvector 기반 법령 검색
-- Vertex AI Gemini 기반 answer/OCR/embedding 연동
-- 개발 환경 우선 runtime smoke와 Phase 7A public `www.law-main-road.cloud` launch 완료
-- Next.js App Router 기반 frontend
-- FastAPI 기반 backend
-- 법령 chunk `1722`개, `selected_as_of = 2026-04-11`
+- Vertex AI Gemini 기반 답변, OCR, 임베딩 연동
+- 공개 데모 도메인 `https://www.law-main-road.cloud` 연결
+- Next.js 화면과 FastAPI 서버 기반 구현
+- 2026년 4월 11일 기준으로 정리한 법령 조각 1,722개 사용
 
-구현된 주요 route:
+주요 화면:
 
-- `/`
-- `/before`
-- `/after`
-- `/after/result`
-- `/after/intake`
-- `/after/draft`
-- `/history`
-
-대표 흐름:
-
-- AI 법률 상담: `/after -> /after/result -> /after/intake -> /after/draft`
-- 계약서 검토 연결: 계약서 검토 -> 상담 맥락 연결 -> AI 법률 상담 답변
-- 사건 기록: 서버 인증이 확인된 사용자의 기록 보관함과 기록 삭제
+- 메인 화면
+- 계약서 검토 화면
+- AI 법률 상담 입력 화면
+- 답변 결과 화면
+- 문서 정보 입력 화면
+- 문서 초안 화면
+- 사건 기록 화면
 
 ## 아키텍처 요약
 
-Runtime:
-
 ```text
-User
-  -> Next.js frontend
-  -> FastAPI backend
-  -> PostgreSQL + pgvector retrieval
-  -> Vertex AI Gemini answer / OCR / embedding
-  -> grounded answer or supported draft
+사용자
+  -> Next.js 화면
+  -> FastAPI 서버
+  -> PostgreSQL + pgvector 법령 검색
+  -> Vertex AI Gemini 답변 / OCR / 임베딩
+  -> 법령 근거가 함께 제시되는 답변 또는 지원되는 문서 초안
 ```
 
-Data pipeline:
-
 ```text
-legalize-kr source data
-  -> preprocessing / chunking pipeline
-  -> 1722 law chunks
-  -> PostgreSQL law_chunks + pgvector embeddings
+legalize-kr 법령 데이터
+  -> 전처리와 법령 조각 생성
+  -> 1,722개 법령 조각
+  -> PostgreSQL 법령 테이블과 pgvector 임베딩
 ```
 
 주요 기술:
@@ -110,111 +101,91 @@ legalize-kr source data
 | Frontend | Next.js App Router, React, TypeScript |
 | Backend | FastAPI |
 | Database | PostgreSQL + pgvector |
-| Auth | Firebase Auth Google Sign-In, Firebase Admin verification |
+| Login | Firebase Google Sign-In, Firebase Admin 확인 |
 | LLM/OCR | Vertex AI Gemini |
 | Embedding | `gemini-embedding-001`, 768 dimensions |
 
-## API와 사용자 흐름
+## 사용자 흐름과 API 경계
 
-공개 문서의 canonical API 설명은
-[API-Endpoints-and-Schemas](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)를
+일반 사용자가 보는 흐름은 세 가지입니다.
+
+- AI 법률 상담: 질문 입력 -> 법령 근거가 함께 제시되는 답변 -> 지원되는 문서 초안
+- 계약서 검토 연결: 계약서 검토 -> 상담에 연결 -> 이어지는 법률 상담 답변
+- 사건 기록: 로그인 사용자에게 저장된 사건 카드 제공 -> 기록 삭제 시 목록에서 숨김
+
+AI 법률 상담은 로그인 없이 사용할 수 있습니다. 계약서 검토, 사건 기록, 저장된
+사건을 상담에 연결하는 기능은 서버 인증이 확인된 로그인 상태에서 사용할 수
+있습니다. 계약서 검토 결과는 상담을 이어가기 위한 참고 정보이며, 답변의 법적
+근거는 검색된 법령에서만 가져옵니다.
+
+API의 상세 경로와 요청/응답 구조는
+[API 문서](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)를
 따릅니다.
 
-현재 README에서 강조하는 public/protected API 경계:
+## 데모와 클라우드 상태
 
-| Endpoint area | Auth | Purpose | Demo use |
-|---|---|---|---|
-| `/api/v1/retrieve` | none | law chunk retrieval | live/free-input answer paths |
-| `/api/v1/answer` | none | grounded legal answer | 상담 질문 답변, 선택 해제된 계약서 연결 fallback |
-| `/api/v1/documents/draft` | none | supported draft generation | 지원되는 임금체불/부당해고 초안 흐름 |
-| `/api/v1/auth/me` | optional Firebase bearer | backend auth status | protected UI gate |
-| `/api/v1/scn001/bridge-runs` | Firebase bearer | protected context-link creation | 계약서 검토 결과를 상담에 연결 |
-| `/api/v1/scn001/before-review-jobs` | Firebase bearer | protected contract-review history | `/before`, `/history` |
-
-AI 법률 상담 흐름은 login-free demo를 유지합니다. 계약서 검토와 사건 기록 같은
-보호 기능은 서버 인증이 확인된 로그인 상태를 요구합니다. 계약서 검토 결과는 상담
-맥락을 이어 주는 참고 정보이며, 법적 근거(legal grounding)가 아닙니다.
-
-## 데모 / 클라우드 상태
-
-클라우드 전환은 개발 환경에서 먼저 검증한 뒤 공개 데모 운영으로 확장하는 방식을
+클라우드 전환은 개발 환경에서 먼저 확인한 뒤 공모전 공개 데모로 확장하는 방식을
 사용합니다.
 
-- `dev`: 첫 cloud target과 smoke-test 환경
-- `demo/contest`: dev smoke 이후 기간 한정 공개 데모 운영 상태
-- `prod`: 별도 production-opening review 전까지 미오픈(NOT opened)
+- `dev`: 첫 클라우드 적용과 기본 동작 확인 환경
+- `demo/contest`: 공모전 심사와 발표를 위한 기간 한정 공개 데모 상태
+- `prod`: 장기 운영 서비스로는 아직 제공하지 않음
 
 완료된 공개 제출 상태:
 
-- 개발 환경 우선 backend/frontend runtime smoke 완료
-- Phase 7A custom domain launch 완료: `https://www.law-main-road.cloud`
-- Firebase Auth Authorized Domains와 backend CORS는 `www` host 기준 검증 완료
-- public frontend URL은 의도적으로 공개하고, backend direct runtime URL과 내부 cloud inventory는 공개하지 않음
+- 백엔드와 프론트엔드 기본 동작 확인 완료
+- 공개 데모 도메인 연결 완료: `https://www.law-main-road.cloud`
+- Google 로그인 허용 도메인과 서버 CORS 설정은 `www` 도메인 기준으로 확인
+- 사용자가 접속하는 프론트엔드 URL만 공개하고, 서버 직접 실행 URL과 내부 클라우드 목록은 공개하지 않음
 
-의도적으로 열지 않은 cloud hardening:
+현재 제공하지 않는 클라우드 운영 항목:
 
 - root apex `law-main-road.cloud`
 - `api.law-main-road.cloud`
-- same-origin `/api/**` rewrite
+- 같은 도메인 아래의 `/api/**` 라우팅
 - HTTPS Load Balancer
 - Cloud Armor
-- production opening
+- 장기 운영 서비스 선언
 
-이 저장소와 공개 문서는 장기 운영 서비스가 준비됐다는 주장으로 읽히지 않습니다.
-공모전 제출과 공개 검토를 위한 데모 운영 상태, 구현 범위, 미오픈 범위를 구분해
-설명합니다.
+이 저장소와 공개 문서는 장기 운영 서비스가 준비됐다는 주장으로 읽히지 않도록,
+공모전 데모 상태와 현재 제공하지 않는 기능을 구분해 설명합니다.
 
-이 공개 저장소는 제출용 정리본이며 배포 기준 저장소가 아닙니다. cloud migration과
-public mirror 정책의 상세 내용은
-[Cloud-Migration-and-Public-Mirror-Policy](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)를
-따릅니다.
+## 현재 제공하지 않는 기능
 
-## 미오픈 범위
+- 계약서 검토 결과를 바탕으로 서버에서 새 문서 초안을 생성하는 기능
+- 계약서 검토 기반 초안을 위한 별도 로그인 API
+- 독립된 상담 연결 전용 화면
+- Recovery 흐름
+- 추가 문서 유형과 추가 상담 시나리오
+- 완전 삭제, 파일 물리 삭제, 계정 삭제, 복구, 보관 기간 정책
+- 장기 운영 배포 선언
 
-다음 항목은 현재 공개 구현 범위에서 미오픈(NOT opened) 상태입니다.
-
-- 계약서 검토 기반 초안 생성을 backend live service로 제공하는 기능
-- 계약서 검토 기반 초안 생성 전용 보호 API
-- 독립 상담 연결 화면(`/bridge`)
-- Recovery
-- 추가 문서/상담 시나리오
-- full retention lifecycle
-- hard delete, artifact purge, account deletion, undo/restore
-- 운영 배포 주장
-
-`사업장 변경 사유 정리서 초안` 예시는 화면에서 제공하는 고정 템플릿 흐름입니다.
-backend live draft generation이나 전용 보호 API가 열렸다는 의미가 아닙니다.
+`사업장 변경 사유 정리서 초안`은 화면에서 제공하는 예시 작성 흐름입니다. 서버에서
+실시간으로 계약서 검토 기반 초안을 생성한다는 의미가 아닙니다.
 
 ## 보안과 개인정보 경계
 
 공개 문서와 공개 저장소에는 다음 정보를 포함하지 않습니다.
 
-- 인증 비밀값, local env values, cloud secret values
-- infrastructure state files 또는 cloud IAM key files
-- cloud project identifier, private/backend runtime URL, private cloud inventory
-- 인증 provider의 개인 식별자, 이메일 값, database account identifier
-- 사건 원문 데이터, 답변/초안/상담 연결 전체 원문 데이터
-- 승인된 공개 저장소 정책을 넘어서는 private development/deploy 세부 정보
+- 인증 비밀값, 로컬 환경값, 클라우드 비밀값
+- 인프라 상태 파일 또는 클라우드 키 파일
+- 클라우드 프로젝트 식별자, 서버 직접 실행 URL, 내부 클라우드 목록
+- 인증 제공자의 개인 식별자, 이메일 값, 데이터베이스 계정 식별자
+- 사건 원문 데이터, 답변·초안·상담 연결 전체 원문 데이터
+- 승인된 공개 저장소 정책을 넘어서는 비공개 개발·배포 세부 정보
 
-Frontend는 민감한 flow 원문 데이터를 Web Storage에 저장하지 않는 방향으로 설계되어
-있습니다. 보호 기능은 backend verification 이후에만 수행됩니다.
+프론트엔드는 민감한 원문 데이터를 브라우저 저장소에 남기지 않는 방향으로 설계되어
+있습니다. 로그인 후 사용할 수 있는 기능은 서버 인증 확인 이후에만 열립니다.
 
-## 개발 과정 및 commit 기록 안내
+## 개발 과정과 실행 안내
 
-개발과 배포 자동화 기준은 access-controlled source/deploy repo
-[`2026-moel-datacontest-core/law_main_road_main`](https://github.com/2026-moel-datacontest-core/law_main_road_main)
-에서 관리합니다(reviewer access required). 이 공개 저장소는 제출용 README/Wiki와
-공개 가능한 snapshot surface입니다. 이 저장소에는 WIF 배포 권한, service account
-key JSON, infrastructure state, private runtime URL, credential, secret value를
-두지 않습니다.
+개발과 배포 자동화 기준은 접근 권한이 필요한 source/deploy 저장소에서 관리합니다.
+이 공개 저장소는 제출용 README/Wiki와 공개 가능한 정리본이며, 서비스 계정 키,
+인프라 상태 파일, 서버 직접 실행 URL, 인증 정보, 비밀값을 포함하지 않습니다.
 
-## 로컬 실행
-
-아래 명령은 source/deploy codebase를 checkout한 reviewer/developer 환경에서
-사용하는 공개 가능한 실행 요약입니다. source/deploy repo 접근이 필요한 경우
-reviewer access를 별도로 받아야 합니다. 이 공개 저장소 clone은 docs/submission
-surface이며, runnable source tree, credentials, private runtime inventory를
-포함하지 않을 수 있습니다.
+아래 명령은 source/deploy codebase 접근 권한을 가진 reviewer/developer 환경에서
+사용하는 공개 가능한 실행 요약입니다. 이 공개 저장소만 clone한 경우에는 runnable
+source tree가 포함되지 않을 수 있습니다.
 
 Backend:
 
@@ -259,15 +230,15 @@ Demo preflight:
 bash scripts/demo_preflight.sh
 ```
 
-Broad retrieval/answer eval은 retrieval, answer generation, embedding behavior,
-DB contents, API response contract가 변경된 경우에만 별도로 수행합니다.
+전체 검색/답변 평가는 검색, 답변 생성, 임베딩, 데이터베이스 내용, API 응답 계약이
+변경된 경우에만 별도로 수행합니다.
 
-Expected focused-check signals:
+기대되는 확인 신호:
 
-- backend import smoke prints `import_ok`
-- document draft checker exits successfully
-- frontend build completes without TypeScript/build errors
-- live Vertex/OCR checks require configured credentials and are not required for doc-only changes
+- 백엔드 import 확인에서 `import_ok` 출력
+- 문서 초안 검증 스크립트 정상 종료
+- 프론트엔드 빌드 정상 완료
+- 실시간 Vertex/OCR 확인은 인증 정보가 필요하며 문서만 바뀐 경우에는 필수 아님
 
 ## 참고
 
