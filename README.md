@@ -45,6 +45,7 @@
 - [최종 아키텍처](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture)
 - [API 문서](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)
 - [클라우드 전환과 공개 미러 정책](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)
+- [문서 표현 정비 검증 부록](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Verification-Wording-Replacement)
 
 내부 계획서와 운영 기록을 그대로 공개하지 않고, 현재 구현 상태와 공개 가능한
 범위만 다시 정리했습니다.
