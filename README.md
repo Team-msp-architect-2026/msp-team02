@@ -4,6 +4,8 @@
 부당해고, 사업장 변경 같은 노동 문제를 한국 노동법 근거와 함께 정리할 수
 있도록 돕는 AI 지원 MVP입니다.
 
+![법대로 메인 화면](docs/images/home-hero.png)
+
 **공개 데모:** https://www.law-main-road.cloud
 
 이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구입니다.
@@ -77,6 +79,10 @@
 - 사건 기록 화면
 
 ## 아키텍처 요약
+
+[![법대로 클라우드 아키텍처 개요](docs/images/cloud-migration-overview.png)](docs/images/cloud-migration-overview.png)
+
+전체 클라우드 자원과 경계는 [최종 아키텍처](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture) 문서를 참고하세요.
 
 ```text
 사용자
