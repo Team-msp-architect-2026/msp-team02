@@ -4,16 +4,16 @@
 부당해고, 사업장 변경 같은 노동 문제를 한국 노동법 근거와 함께 정리할 수
 있도록 돕는 AI 지원 MVP입니다.
 
-**Public demo:** https://www.law-main-road.cloud
+**공개 데모:** https://www.law-main-road.cloud
 
 이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구이며,
 법률 자문이나 행정기관의 판단을 대체하지 않습니다.
 
-이 public repository는 공모전 제출과 공개 검토를 위한 curated public mirror입니다.
-source/deploy repo of authority는 access-controlled
+이 공개 저장소는 공모전 제출과 공개 검토를 위한 정리본입니다.
+개발과 배포의 기준 저장소는 접근 권한이 필요한
 [`2026-moel-datacontest-core/law_main_road_main`](https://github.com/2026-moel-datacontest-core/law_main_road_main)
-입니다(reviewer access required). 현재 public mirror는 deploy authority나 WIF
-배포 권한을 의미하지 않습니다.
+입니다(reviewer access required). 이 공개 저장소는 배포 권한이나 WIF 배포 권한을
+갖지 않습니다.
 
 ## 빠른 심사 흐름
 
@@ -21,15 +21,15 @@ source/deploy repo of authority는 access-controlled
 
 1. https://www.law-main-road.cloud 를 엽니다.
 2. `/after`로 이동하거나 메인 화면의 법률 상담 흐름을 선택합니다.
-3. `SCN-004-DEMO-FREEZE` preset을 선택하고 제출합니다.
+3. 예시 사례에서 `임금체불·부당해고 상담`을 선택하고 제출합니다.
 4. `/after/result`에서 검색 근거, 인용 조문, 주의사항을 확인합니다.
 5. 지원되는 문서 유형을 선택해 `/after/intake`로 이동합니다.
 6. 필요한 사실관계를 입력한 뒤 `/after/draft`에서 초안, 누락 항목, 증거 체크리스트, copy/print 동작을 확인합니다.
 
 선택 확인 흐름:
 
-- Google login 후 `/before`에서 SCN-001 계약 검토와 Bridge handoff를 확인합니다.
-- `/history`에서 backend-verified user의 사건 기록 카드와 MVP soft-delete UX를 확인합니다.
+- Google login 후 `/before`에서 계약서 검토 결과를 법률 상담에 연결하는 흐름을 확인합니다.
+- `/history`에서 서버 인증이 확인된 사용자의 사건 기록 카드와 기록 삭제 동작을 확인합니다.
 
 ## 공개 문서
 
@@ -53,14 +53,14 @@ source/deploy repo of authority는 access-controlled
 
 기준일: `2026-05-12`
 
-- SCN-004 login-free After answer/draft demo
-- SCN-001 Before/Bridge: protected contract review/history -> context handoff -> After answer
-- SCN-001 protected history archive와 MVP soft-delete
-- SCN-001 fixed preset: frontend-local frozen draft demo
+- 로그인 없이 사용할 수 있는 AI 법률 상담과 문서 초안 흐름
+- 로그인 사용자용 계약서 검토, 사건 기록, 상담 연결 흐름
+- 사건 기록 보관함과 기록 삭제(목록에서 숨김)
+- `사업장 변경 사유 정리서 초안` 고정 예시 흐름
 - Firebase Auth Google Sign-In + backend verification
 - PostgreSQL + pgvector 기반 법령 검색
 - Vertex AI Gemini 기반 answer/OCR/embedding 연동
-- dev-first runtime smoke와 Phase 7A public `www.law-main-road.cloud` launch 완료
+- 개발 환경 우선 runtime smoke와 Phase 7A public `www.law-main-road.cloud` launch 완료
 - Next.js App Router 기반 frontend
 - FastAPI 기반 backend
 - 법령 chunk `1722`개, `selected_as_of = 2026-04-11`
@@ -77,9 +77,9 @@ source/deploy repo of authority는 access-controlled
 
 대표 흐름:
 
-- SCN-004: `/after -> /after/result -> /after/intake -> /after/draft`
-- SCN-001: Before review -> Bridge context -> After answer
-- History: backend-verified user의 SCN-001 record archive와 MVP soft-delete
+- AI 법률 상담: `/after -> /after/result -> /after/intake -> /after/draft`
+- 계약서 검토 연결: 계약서 검토 -> 상담 맥락 연결 -> AI 법률 상담 답변
+- 사건 기록: 서버 인증이 확인된 사용자의 기록 보관함과 기록 삭제
 
 ## 아키텍처 요약
 
@@ -125,27 +125,28 @@ legalize-kr source data
 | Endpoint area | Auth | Purpose | Demo use |
 |---|---|---|---|
 | `/api/v1/retrieve` | none | law chunk retrieval | live/free-input answer paths |
-| `/api/v1/answer` | none | grounded legal answer | SCN-004 modified/free input, Bridge unchecked fallback |
-| `/api/v1/documents/draft` | none | SCN-004 supported draft generation | SCN-004 draft flow |
+| `/api/v1/answer` | none | grounded legal answer | 상담 질문 답변, 선택 해제된 계약서 연결 fallback |
+| `/api/v1/documents/draft` | none | supported draft generation | 지원되는 임금체불/부당해고 초안 흐름 |
 | `/api/v1/auth/me` | optional Firebase bearer | backend auth status | protected UI gate |
-| `/api/v1/scn001/bridge-runs` | Firebase bearer | protected Bridge history/run creation | SCN-001 logged-in flow |
-| `/api/v1/scn001/before-review-jobs` | Firebase bearer | protected Before history | `/before`, `/history` |
+| `/api/v1/scn001/bridge-runs` | Firebase bearer | protected context-link creation | 계약서 검토 결과를 상담에 연결 |
+| `/api/v1/scn001/before-review-jobs` | Firebase bearer | protected contract-review history | `/before`, `/history` |
 
-SCN-004 After flow는 login-free demo 흐름을 유지합니다. SCN-001 protected
-actions는 backend-verified auth를 요구합니다. Bridge는 사건 맥락을 이어 주는
-연결/참고 정보이며, 법적 근거(legal grounding)가 아닙니다.
+AI 법률 상담 흐름은 login-free demo를 유지합니다. 계약서 검토와 사건 기록 같은
+보호 기능은 서버 인증이 확인된 로그인 상태를 요구합니다. 계약서 검토 결과는 상담
+맥락을 이어 주는 참고 정보이며, 법적 근거(legal grounding)가 아닙니다.
 
 ## 데모 / 클라우드 상태
 
-Cloud migration은 dev-first policy를 사용합니다.
+클라우드 전환은 개발 환경에서 먼저 검증한 뒤 공개 데모 운영으로 확장하는 방식을
+사용합니다.
 
-- `dev`: first cloud target and smoke-test environment
-- `demo/contest`: dev smoke 이후 기간 한정 public presentation posture
+- `dev`: 첫 cloud target과 smoke-test 환경
+- `demo/contest`: dev smoke 이후 기간 한정 공개 데모 운영 상태
 - `prod`: 별도 production-opening review 전까지 미오픈(NOT opened)
 
 완료된 공개 제출 상태:
 
-- dev-first backend/frontend runtime smoke 완료
+- 개발 환경 우선 backend/frontend runtime smoke 완료
 - Phase 7A custom domain launch 완료: `https://www.law-main-road.cloud`
 - Firebase Auth Authorized Domains와 backend CORS는 `www` host 기준 검증 완료
 - public frontend URL은 의도적으로 공개하고, backend direct runtime URL과 내부 cloud inventory는 공개하지 않음
@@ -159,12 +160,12 @@ Cloud migration은 dev-first policy를 사용합니다.
 - Cloud Armor
 - production opening
 
-이 저장소와 공개 문서는 production-ready 주장으로 읽히지 않습니다. 공모전 제출과
-공개 검토를 위한 `demo/contest` posture, 구현 범위, 미오픈 범위를 구분해
+이 저장소와 공개 문서는 장기 운영 서비스가 준비됐다는 주장으로 읽히지 않습니다.
+공모전 제출과 공개 검토를 위한 데모 운영 상태, 구현 범위, 미오픈 범위를 구분해
 설명합니다.
 
-public mirror는 curated submission surface이며 deploy authority가 아닙니다.
-cloud migration과 public mirror 정책의 상세 내용은
+이 공개 저장소는 제출용 정리본이며 배포 기준 저장소가 아닙니다. cloud migration과
+public mirror 정책의 상세 내용은
 [Cloud-Migration-and-Public-Mirror-Policy](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)를
 따릅니다.
 
@@ -172,47 +173,46 @@ cloud migration과 public mirror 정책의 상세 내용은
 
 다음 항목은 현재 공개 구현 범위에서 미오픈(NOT opened) 상태입니다.
 
-- SCN-001 live/backend document draft generation
-- protected SCN-001 draft endpoint
-- independent `/bridge`
+- 계약서 검토 기반 초안 생성을 backend live service로 제공하는 기능
+- 계약서 검토 기반 초안 생성 전용 보호 API
+- 독립 상담 연결 화면(`/bridge`)
 - Recovery
-- SCN-005
+- 추가 문서/상담 시나리오
 - full retention lifecycle
 - hard delete, artifact purge, account deletion, undo/restore
 - 운영 배포 주장
 
-SCN-001의 고정 preset 기반 frozen draft demo는 frontend-local deterministic
-flow입니다. live/backend SCN-001 draft generation 또는 protected SCN-001 draft
-endpoint를 의미하지 않습니다.
+`사업장 변경 사유 정리서 초안` 예시는 화면에서 제공하는 고정 템플릿 흐름입니다.
+backend live draft generation이나 전용 보호 API가 열렸다는 의미가 아닙니다.
 
 ## 보안과 개인정보 경계
 
-공개 문서와 public mirror에는 다음 정보를 포함하지 않습니다.
+공개 문서와 공개 저장소에는 다음 정보를 포함하지 않습니다.
 
 - 인증 비밀값, local env values, cloud secret values
 - infrastructure state files 또는 cloud IAM key files
 - cloud project identifier, private/backend runtime URL, private cloud inventory
 - 인증 provider의 개인 식별자, 이메일 값, database account identifier
-- 사건 원문 데이터, 답변/초안/Bridge 전체 원문 데이터
-- 승인된 public mirror 정책을 넘어서는 private development/deploy 세부 정보
+- 사건 원문 데이터, 답변/초안/상담 연결 전체 원문 데이터
+- 승인된 공개 저장소 정책을 넘어서는 private development/deploy 세부 정보
 
 Frontend는 민감한 flow 원문 데이터를 Web Storage에 저장하지 않는 방향으로 설계되어
-있습니다. SCN-001 protected actions는 backend verification 이후에만 수행됩니다.
+있습니다. 보호 기능은 backend verification 이후에만 수행됩니다.
 
 ## 개발 과정 및 commit 기록 안내
 
 개발과 배포 자동화 기준은 access-controlled source/deploy repo
 [`2026-moel-datacontest-core/law_main_road_main`](https://github.com/2026-moel-datacontest-core/law_main_road_main)
-에서 관리합니다(reviewer access required). 이 public mirror는 제출용 README/Wiki와
-공개 가능한 snapshot surface입니다. 이 mirror에는 WIF deploy permission, service
-account key JSON, infrastructure state, private runtime URL, credential, secret
-value를 두지 않습니다.
+에서 관리합니다(reviewer access required). 이 공개 저장소는 제출용 README/Wiki와
+공개 가능한 snapshot surface입니다. 이 저장소에는 WIF 배포 권한, service account
+key JSON, infrastructure state, private runtime URL, credential, secret value를
+두지 않습니다.
 
 ## 로컬 실행
 
 아래 명령은 source/deploy codebase를 checkout한 reviewer/developer 환경에서
 사용하는 공개 가능한 실행 요약입니다. source/deploy repo 접근이 필요한 경우
-reviewer access를 별도로 받아야 합니다. 이 public mirror clone은 docs/submission
+reviewer access를 별도로 받아야 합니다. 이 공개 저장소 clone은 docs/submission
 surface이며, runnable source tree, credentials, private runtime inventory를
 포함하지 않을 수 있습니다.
 
