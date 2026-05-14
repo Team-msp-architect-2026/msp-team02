@@ -4,7 +4,6 @@
 부당해고, 사업장 변경 같은 노동 문제를 한국 노동법 근거와 함께 정리할 수
 있도록 돕는 AI 지원 MVP입니다.
 
-![법대로 메인 화면](docs/images/home-hero.png)
 
 - **공개 데모:** https://www.law-main-road.cloud
 - **데모 시연 영상:** [YouTube에서 보기](https://youtu.be/fFEPP3KtHMs)
