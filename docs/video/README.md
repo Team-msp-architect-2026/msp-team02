@@ -4,15 +4,21 @@
 
 ## 공개 문서 연결 대상
 
-- `lmr_demo_preview.gif`
 - `lmr_demo_web.mp4`
 
-`lmr_demo_preview.gif`는 GitHub README와 Wiki에서 바로 보이도록 만든 2분 전체 흐름
-미리보기입니다.
+README와 Wiki의 대표 영상 링크는 YouTube 시연 영상입니다.
 
-`lmr_demo_web.mp4`는 web-optimized MP4 파일입니다. GitHub의 repo file viewer는
+```text
+https://youtu.be/fFEPP3KtHMs
+```
+
+GitHub README/Wiki는 YouTube iframe player를 허용하지 않으므로, 공개 문서에서는
+YouTube thumbnail image를 크게 보여 주고 클릭 시 YouTube 영상으로 이동하도록
+연결합니다.
+
+`lmr_demo_web.mp4`는 web-optimized MP4 백업 파일입니다. GitHub의 repo file viewer는
 MP4를 바로 재생하지 않고 다운로드 화면을 보일 수 있으므로, 공개 문서의 첫 확인
-자료는 GIF를 기준으로 안내합니다.
+자료는 YouTube 링크를 기준으로 안내합니다.
 
 ## 로컬 원본
 
