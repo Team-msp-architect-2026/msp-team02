@@ -6,7 +6,8 @@
 
 ![법대로 메인 화면](docs/images/home-hero.png)
 
-**공개 데모:** https://www.law-main-road.cloud
+- **공개 데모:** https://www.law-main-road.cloud
+- **데모 영상:** [2분 전체 흐름 보기](docs/video/lmr_demo_web.mp4)
 
 이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구입니다.
 변호사 자문, 행정기관 판단, 법원의 판단을 대체하지 않습니다.
@@ -21,12 +22,13 @@
 
 5분 안에 확인할 수 있는 흐름입니다.
 
-1. https://www.law-main-road.cloud 를 엽니다.
-2. 메인 화면에서 AI 법률 상담을 선택합니다.
-3. 예시 사례에서 `임금체불·부당해고 상담`을 선택하고 제출합니다.
-4. 답변 화면에서 법령 근거, 인용 조문, 주의사항을 확인합니다.
-5. 지원되는 문서 유형을 선택하고 필요한 사실관계를 입력합니다.
-6. 초안 화면에서 문서 본문, 추가로 필요한 정보, 증거 체크리스트, 복사와 인쇄 동작을 확인합니다.
+1. [데모 영상](docs/video/lmr_demo_web.mp4)으로 전체 흐름을 먼저 확인합니다.
+2. https://www.law-main-road.cloud 를 엽니다.
+3. 메인 화면에서 AI 법률 상담을 선택합니다.
+4. 예시 사례에서 `임금체불·부당해고 상담`을 선택하고 제출합니다.
+5. 답변 화면에서 법령 근거, 인용 조문, 주의사항을 확인합니다.
+6. 지원되는 문서 유형을 선택하고 필요한 사실관계를 입력합니다.
+7. 초안 화면에서 문서 본문, 추가로 필요한 정보, 증거 체크리스트, 복사와 인쇄 동작을 확인합니다.
 
 추가 확인 흐름:
 
@@ -46,15 +48,16 @@
 - [UI 화면 구성](https://github.com/Team-msp-architect-2026/msp-team02/wiki/UI-Screens)
 - [최종 아키텍처](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Final-Architecture)
 - [API 문서](https://github.com/Team-msp-architect-2026/msp-team02/wiki/API-Endpoints-and-Schemas)
+- [E2E 데모 검증](https://github.com/Team-msp-architect-2026/msp-team02/wiki/E2E-Demo-Verification)
 - [클라우드 전환과 공개 미러 정책](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy)
-- [문서 표현 정비 검증 부록](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Verification-Wording-Replacement)
 
 내부 계획서와 운영 기록을 그대로 공개하지 않고, 현재 구현 상태와 공개 가능한
 범위만 다시 정리했습니다.
 
 ## 현재 제공 기능
 
-기준일: `2026-05-12`
+- 문서 최종 정리일: `2026-05-14`
+- 구현 기준일: `2026-05-13`
 
 - 로그인 없이 사용할 수 있는 AI 법률 상담
 - 법령 근거가 함께 제시되는 답변
@@ -66,6 +69,7 @@
 - PostgreSQL + pgvector 기반 법령 검색
 - Vertex AI Gemini 기반 답변, OCR, 임베딩 연동
 - 공개 데모 도메인 `https://www.law-main-road.cloud` 연결
+- 공개 검토용 데모 영상
 - Next.js 화면과 FastAPI 서버 기반 구현
 - 2026년 4월 11일 기준으로 정리한 법령 조각 1,722개 사용
 
@@ -142,6 +146,7 @@ API의 상세 경로와 요청/응답 구조는
 
 - 백엔드와 프론트엔드 기본 동작 확인 완료
 - 공개 데모 도메인 연결 완료: `https://www.law-main-road.cloud`
+- 공개 검토용 web-optimized 데모 영상 배치: `docs/video/lmr_demo_web.mp4`
 - Google 로그인 허용 도메인과 서버 CORS 설정은 `www` 도메인 기준으로 확인
 - 사용자가 접속하는 프론트엔드 URL만 공개하고, 서버 직접 실행 URL과 내부 클라우드 목록은 공개하지 않음
 
