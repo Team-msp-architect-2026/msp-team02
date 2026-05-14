@@ -4,10 +4,15 @@
 
 ## 공개 문서 연결 대상
 
+- `lmr_demo_preview.gif`
 - `lmr_demo_web.mp4`
 
-`lmr_demo_web.mp4`는 README와 Wiki에서 바로 연결하기 위한 web-optimized copy입니다.
-공개 문서에서는 이 파일을 기준으로 안내합니다.
+`lmr_demo_preview.gif`는 GitHub README와 Wiki에서 바로 보이도록 만든 2분 전체 흐름
+미리보기입니다.
+
+`lmr_demo_web.mp4`는 web-optimized MP4 파일입니다. GitHub의 repo file viewer는
+MP4를 바로 재생하지 않고 다운로드 화면을 보일 수 있으므로, 공개 문서의 첫 확인
+자료는 GIF를 기준으로 안내합니다.
 
 ## 로컬 원본
 
