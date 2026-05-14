@@ -7,7 +7,10 @@
 ![법대로 메인 화면](docs/images/home-hero.png)
 
 - **공개 데모:** https://www.law-main-road.cloud
-- **데모 영상:** [2분 전체 흐름 보기](docs/video/lmr_demo_web.mp4)
+- **데모 미리보기:** 아래 GIF에서 전체 흐름을 바로 볼 수 있습니다.
+- **MP4 파일:** [브라우저에서 열기 또는 다운로드](https://raw.githubusercontent.com/Team-msp-architect-2026/msp-team02/main/docs/video/lmr_demo_web.mp4)
+
+![법대로 데모 영상 미리보기](docs/video/lmr_demo_preview.gif)
 
 이 MVP는 법률 정보를 정리하고 관련 근거를 확인하는 데 도움을 주는 도구입니다.
 변호사 자문, 행정기관 판단, 법원의 판단을 대체하지 않습니다.
@@ -22,7 +25,7 @@
 
 5분 안에 확인할 수 있는 흐름입니다.
 
-1. [데모 영상](docs/video/lmr_demo_web.mp4)으로 전체 흐름을 먼저 확인합니다.
+1. 위 데모 미리보기 GIF로 전체 흐름을 먼저 확인합니다.
 2. https://www.law-main-road.cloud 를 엽니다.
 3. 메인 화면에서 AI 법률 상담을 선택합니다.
 4. 예시 사례에서 `임금체불·부당해고 상담`을 선택하고 제출합니다.
@@ -69,7 +72,7 @@
 - PostgreSQL + pgvector 기반 법령 검색
 - Vertex AI Gemini 기반 답변, OCR, 임베딩 연동
 - 공개 데모 도메인 `https://www.law-main-road.cloud` 연결
-- 공개 검토용 데모 영상
+- 공개 검토용 데모 미리보기 GIF와 MP4 파일
 - Next.js 화면과 FastAPI 서버 기반 구현
 - 2026년 4월 11일 기준으로 정리한 법령 조각 1,722개 사용
 
@@ -146,7 +149,8 @@ API의 상세 경로와 요청/응답 구조는
 
 - 백엔드와 프론트엔드 기본 동작 확인 완료
 - 공개 데모 도메인 연결 완료: `https://www.law-main-road.cloud`
-- 공개 검토용 web-optimized 데모 영상 배치: `docs/video/lmr_demo_web.mp4`
+- 공개 검토용 데모 미리보기 GIF 배치: `docs/video/lmr_demo_preview.gif`
+- 공개 검토용 web-optimized MP4 파일 배치: `docs/video/lmr_demo_web.mp4`
 - Google 로그인 허용 도메인과 서버 CORS 설정은 `www` 도메인 기준으로 확인
 - 사용자가 접속하는 프론트엔드 URL만 공개하고, 서버 직접 실행 URL과 내부 클라우드 목록은 공개하지 않음
 
