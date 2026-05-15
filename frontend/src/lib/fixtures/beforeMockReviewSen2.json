@@ -1,0 +1,90 @@
+{
+  "review_id": "54a00490-5cfc-4371-87d1-00985108ceb7",
+  "reviewed_at": "2026-04-21T07:06:21.525301+00:00",
+  "contract_info": {
+    "type": "기간의 정함이 없는 계약서",
+    "employer": "한빛 서비스",
+    "employee": "근로자 B",
+    "start_date": "2026-05-01"
+  },
+  "overall_result": "VIOLATION",
+  "overall_severity": "MEDIUM",
+  "summary": "6항 내용 위반, 8항 내용 위반, 11항 주의 필요 발견.",
+  "rule_check": {
+    "minimum_wage": {
+      "status": "PASS",
+      "severity": "NONE",
+      "wage_type": "월급",
+      "stated_amount": 2500000,
+      "calc_daily_hours": 8.0,
+      "days_per_week": 5,
+      "weekly_hours": 40.0,
+      "juyu_hours": 8.0,
+      "juyu_applied": true,
+      "total_weekly_hours": 48.0,
+      "monthly_hours": 208.57,
+      "calc_hourly": 11986.38,
+      "minimum_wage_year": 2026,
+      "min_hourly": 10320,
+      "min_monthly_209h": 2156880,
+      "shortfall": 0,
+      "message": "월급 2,500,000원 기준, 1일 8.0시간·주 5일 (주 소정 40.0시간, 주휴 8.0시간 반영) → 월 환산 208.57시간, 시급 11,986원 ≥ 최저임금 10,320원"
+    },
+    "working_hours": {
+      "status": "PASS",
+      "severity": "NONE",
+      "stated_daily": 9.0,
+      "actual_daily": 8.0,
+      "break_hours": 1.0,
+      "legal_max_daily": 8.0,
+      "law_ref": "근로기준법 제50조",
+      "message": "업무시간 9.0시간 중 휴게 1.0시간 제외 실근로 8.0시간 (법정 8시간 이내)"
+    },
+    "break_time": {
+      "status": "PASS",
+      "severity": "NONE",
+      "gross_work_hours": 9.0,
+      "break_minutes": 60,
+      "required_break_min": 60,
+      "law_ref": "근로기준법 제54조",
+      "message": "총 근무 9.0시간에 휴게 60분 (적정)"
+    },
+    "payment_day": {
+      "status": "PASS",
+      "severity": "NONE",
+      "payment_day": 25,
+      "law_ref": "근로기준법 제43조",
+      "message": "임금지급일 매월 25일로 명시됨"
+    }
+  },
+  "ocr_warnings": [
+    {
+      "field": "working_hours.daily_hours",
+      "structured": 9.0,
+      "corrected": 8.0,
+      "note": "OCR 오류 또는 계약서 기재 오류 — 재계산값 사용"
+    }
+  ],
+  "user_explanation": {
+    "headline": "추가 확인이 필요한 계약서입니다.",
+    "plain_language_summary": "근로자 B 님의 기간의 정함이 없는 계약서를 검토한 결과, 현재 검토 결과 기준으로 큰 문제는 보이지 않지만, 실제 근무조건과 계약서 내용이 일치하는지는 계속 확인이 필요합니다.",
+    "overall_assessment": [
+      "핵심 근로조건은 현재 기준으로 큰 문제 없이 기재된 것으로 보입니다."
+    ],
+    "important_points": [],
+    "recommended_actions": [
+      "현재 결과를 기준으로 계약서를 보관하고, 실제 근무조건이 바뀌면 다시 검토하세요."
+    ],
+    "evidence": [
+      {
+        "title": "임금 조항 원문",
+        "excerpt": "6. 임금\n월급\n2,500,000\n원\n상여금\n있음(\n)원\n없음(\n그 밖의 수당 (약정수\n있음[ ]\n없음 [\n원,\n당)\n원원\n원,\n임금지급일\n매월(매주\n또는 매일)\n25일(휴일의 경우는 전날 지급)\n지급방법\n근로자에게\n직접(현금)지급[] 근로자 명의 계좌에 입금 [✓]"
+      },
+      {
+        "title": "근로시간 조항 원문",
+        "excerpt": "4. 소정근로시간 : 09시 00분 ~ 18시 00분(휴게: 12시 00분\n(1일 8 시간, 1주 40시간)\n13 시 00 분)"
+      }
+    ],
+    "markdown": "<!-- fixture copied from latest before review result by request -->"
+  }
+}

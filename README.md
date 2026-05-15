@@ -55,6 +55,16 @@
 
 ---
 
+## 평가 상태
+
+In-scope RAG evaluation passed hard grounding/citation checks. The refusal /
+out-of-scope eval runner exists, but the first live run identified a known gap:
+the current answer path is citation-first and lacks explicit refusal mode. This
+refusal result is documented as measurement stabilization evidence, not as a
+passing public headline score.
+
+---
+
 ## Architecture Overview
 
 [![법대로 클라우드 아키텍처 개요](docs/images/cloud-migration-overview.png)](docs/images/cloud-migration-overview.png)

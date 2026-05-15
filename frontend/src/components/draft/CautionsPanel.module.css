@@ -1,0 +1,36 @@
+.panel {
+  display: grid;
+  gap: var(--kl-space-3);
+  padding: var(--kl-space-4);
+  border: var(--kl-card-border);
+  border-left: 4px solid var(--kl-danger);
+  border-radius: var(--kl-radius-md);
+  background: var(--kl-surface-danger);
+}
+
+.title {
+  margin: 0;
+  color: var(--kl-text-danger);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: var(--kl-lh-heading);
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--kl-text-primary);
+  font-size: 0.95rem;
+  line-height: var(--kl-lh-body);
+  overflow-wrap: anywhere;
+}
+
+.emptyText {
+  margin: 0;
+  color: var(--kl-text-secondary);
+  font-size: 0.94rem;
+  line-height: var(--kl-lh-body);
+  overflow-wrap: anywhere;
+}

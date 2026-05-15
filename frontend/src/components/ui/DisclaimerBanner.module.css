@@ -1,0 +1,13 @@
+.banner {
+  border-left: 4px solid var(--kl-warning);
+  background: var(--kl-surface-warning);
+  color: var(--kl-text-primary);
+  padding: var(--kl-space-4);
+  font-size: var(--kl-text-body);
+  line-height: var(--kl-lh-body);
+  letter-spacing: var(--kl-ls-body);
+}
+
+.banner p {
+  margin: 0;
+}

@@ -39,6 +39,14 @@ venv/
 .ruff_cache/
 htmlcov/
 .coverage
+backend/.pgdata/
+backend/logs/
+backend/data/before_artifacts/
+backend/data/after_artifacts/
+*.sqlite
+*.sqlite3
+*.db
+*.dump
 
 # ─────────────────────────────────────
 # Node / JavaScript
@@ -82,6 +90,12 @@ vendor/
 *.tfvars
 !*.tfvars.example
 .terraformrc
+*.tfplan
+*.tfvars.json
+backend.hcl
+*.backend.hcl
+crash.log
+crash.*.log
 
 # ─────────────────────────────────────
 # Kubernetes / Helm
@@ -109,3 +123,10 @@ models/weights/
 tmp/
 *.bak
 *.tmp
+.omx/
+.claude/
+.codex/
+frontend/.omx/
+frontend/.codex/
+docs/video/lmr_demo.mp4
+eval/reports/*.stdout.txt

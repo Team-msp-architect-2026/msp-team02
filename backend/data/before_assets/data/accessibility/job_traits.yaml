@@ -1,0 +1,13 @@
+job_traits:
+  screen_heavy:
+    label: "화면 사용 많음"
+  customer_facing:
+    label: "고객 응대"
+  mobile_work:
+    label: "이동 업무"
+  field_work:
+    label: "현장 업무"
+  repetitive_manual:
+    label: "반복 손작업"
+  phone_communication:
+    label: "전화 소통 비중 큼"
