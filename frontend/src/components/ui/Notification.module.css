@@ -1,0 +1,118 @@
+.notification {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--kl-space-4);
+  padding: var(--kl-space-4);
+  border-left: 4px solid var(--kl-primary);
+  background: var(--kl-surface-info);
+  color: var(--kl-text-primary);
+}
+
+.content {
+  display: grid;
+  gap: var(--kl-space-1);
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--kl-text-body);
+  font-weight: 600;
+  line-height: var(--kl-lh-body-short);
+  letter-spacing: var(--kl-ls-body);
+  overflow-wrap: anywhere;
+}
+
+.message {
+  color: var(--kl-text-secondary);
+  font-size: var(--kl-text-body);
+  line-height: var(--kl-lh-body);
+  letter-spacing: var(--kl-ls-body);
+  overflow-wrap: anywhere;
+}
+
+.message p {
+  margin: 0;
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--kl-space-2);
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+.action {
+  min-height: 32px;
+  padding: 0 var(--kl-space-3);
+  border: 1px solid currentColor;
+  border-radius: var(--kl-radius-control);
+  color: var(--kl-primary);
+  background: transparent;
+  font-size: var(--kl-text-caption);
+  font-weight: 600;
+  line-height: var(--kl-lh-caption);
+  letter-spacing: var(--kl-ls-caption);
+}
+
+.action:hover {
+  color: var(--kl-primary-hover);
+  background: var(--kl-bg);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--kl-radius-control);
+  color: var(--kl-text-secondary);
+  background: transparent;
+  font-size: var(--kl-text-h3);
+  line-height: 1;
+}
+
+.close:hover {
+  color: var(--kl-text-primary);
+  background: var(--kl-bg);
+}
+
+.info {
+  border-left-color: var(--kl-primary);
+  background: var(--kl-surface-info);
+}
+
+.warning {
+  border-left-color: var(--kl-warning);
+  background: var(--kl-surface-warning);
+}
+
+.error {
+  border-left-color: var(--kl-danger);
+  background: var(--kl-surface-danger);
+}
+
+.success {
+  border-left-color: var(--kl-success);
+  background: var(--kl-surface-success);
+}
+
+@media (max-width: 671px) {
+  .notification {
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .action {
+    flex: 1 1 auto;
+  }
+}

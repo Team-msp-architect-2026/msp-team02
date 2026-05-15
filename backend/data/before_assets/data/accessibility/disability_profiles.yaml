@@ -1,0 +1,25 @@
+profiles:
+  visual:
+    label: "시각"
+    aliases: ["시각", "visual"]
+    summary: "화면 접근성, 문서 접근성, 음성 기반 출력, 보조공학기기 지원이 핵심입니다."
+  hearing:
+    label: "청각"
+    aliases: ["청각", "hearing"]
+    summary: "문자 기반 소통, 자막, 시각적 알림, 회의/교육 방식 조정이 중요합니다."
+  mobility:
+    label: "지체/뇌병변"
+    aliases: ["지체", "뇌병변", "mobility"]
+    summary: "이동 동선, 작업 위치, 장비 높이, 근로지원인 연계 가능성을 같이 봅니다."
+  cognitive:
+    label: "발달/인지"
+    aliases: ["발달", "인지", "cognitive"]
+    summary: "이해하기 쉬운 지시 방식, 업무 순서표, 체크리스트, 교육 절차가 중요합니다."
+  mental:
+    label: "정신"
+    aliases: ["정신", "mental"]
+    summary: "업무 강도, 스케줄 안정성, 고용관리 지원, 편의 제공 협의가 핵심입니다."
+  complex:
+    label: "기타/복합"
+    aliases: ["복합", "기타", "complex"]
+    summary: "여러 특성을 함께 고려해 편의 제공과 공적 지원을 같이 검토해야 합니다."

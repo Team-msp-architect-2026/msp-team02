@@ -1,0 +1,53 @@
+rules:
+  visual:
+    default_cards:
+      - "screen_reader"
+      - "assistive_device_support"
+      - "employer_support"
+    trait_overrides:
+      screen_heavy:
+        - "screen_reader"
+    questions:
+      - "업무용 시스템이 화면 확대나 스크린리더에 대응하는지 확인해 보세요."
+  hearing:
+    default_cards:
+      - "communication_support"
+      - "employer_support"
+    trait_overrides:
+      customer_facing:
+        - "communication_support"
+      phone_communication:
+        - "communication_support"
+    questions:
+      - "회의, 고객 응대, 비상 알림이 어떤 방식으로 전달되는지 먼저 물어보세요."
+  mobility:
+    default_cards:
+      - "route_adjustment"
+      - "workplace_assistant"
+      - "employer_support"
+    trait_overrides:
+      mobile_work:
+        - "route_adjustment"
+      field_work:
+        - "route_adjustment"
+    questions:
+      - "출입 동선, 작업 위치, 화장실 접근, 휴게 공간을 사전에 확인해 보세요."
+  cognitive:
+    default_cards:
+      - "structured_guidance"
+      - "employer_support"
+    questions:
+      - "교육 자료와 업무 인수인계 방식을 더 이해하기 쉬운 형태로 제공할 수 있는지 물어보세요."
+  mental:
+    default_cards:
+      - "schedule_adjustment"
+      - "employer_support"
+    questions:
+      - "교대나 야간 근무 비중, 갑작스러운 스케줄 변경 가능성을 먼저 확인해 보세요."
+  complex:
+    default_cards:
+      - "assistive_device_support"
+      - "workplace_assistant"
+      - "employer_support"
+    questions:
+      - "회사 내부 조정과 공적 지원 제도를 함께 검토하는 방식으로 접근해 보세요."

@@ -1,0 +1,227 @@
+.panel {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  padding: 18px;
+  border: var(--kl-card-border);
+  border-radius: var(--kl-radius-md);
+  background: var(--kl-surface-elevated);
+  color: var(--kl-text-primary);
+  box-shadow: var(--kl-shadow-surface);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+}
+
+.badge,
+.selectorLabel,
+.overviewEyebrow,
+.cardKind {
+  display: inline-flex;
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge {
+  align-self: start;
+  color: var(--kl-text-muted);
+}
+
+.title,
+.cardTitle {
+  margin: 0;
+  color: var(--kl-text-primary);
+  line-height: 1.25;
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.title {
+  font-size: 1.4rem;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+}
+
+.description,
+.overviewText,
+.cardDescription,
+.cardHint,
+.emptyState,
+.infoBox,
+.warningBox {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.description,
+.overviewText,
+.cardDescription,
+.emptyState,
+.infoBox {
+  color: var(--kl-text-secondary);
+}
+
+.selectorBlock,
+.overviewCard,
+.recommendationCard,
+.nextStepCard,
+.emptyState,
+.infoBox,
+.warningBox {
+  border: var(--kl-card-border);
+  border-radius: var(--kl-radius-md);
+}
+
+.selectorBlock,
+.overviewCard,
+.recommendationCard,
+.nextStepCard,
+.emptyState,
+.infoBox,
+.warningBox {
+  padding: 18px;
+}
+
+.selectorLabel,
+.overviewEyebrow,
+.cardKind {
+  color: var(--kl-text-muted);
+}
+
+.optionRow,
+.lawRefRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.optionChip {
+  min-height: 38px;
+  padding: 0 14px;
+  border: var(--kl-border-subtle-line);
+  border-radius: var(--kl-radius-sm);
+  background: var(--kl-surface-card);
+  color: var(--kl-text-secondary);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.optionChip:hover {
+  transform: translateY(-1px);
+  border-color: var(--kl-primary);
+  color: var(--kl-primary);
+}
+
+.optionChipActive {
+  border-color: var(--kl-primary);
+  background: var(--kl-primary-light);
+  color: var(--kl-primary);
+}
+
+.warningBox {
+  border-color: var(--kl-warning);
+  background: var(--kl-surface-warning);
+  color: var(--kl-text-warning);
+}
+
+.cardStack {
+  display: grid;
+  gap: 14px;
+}
+
+.overviewCard,
+.nextStepCard {
+  background: var(--kl-surface-band);
+}
+
+.recommendationCard {
+  display: grid;
+  gap: 12px;
+  background: var(--kl-surface-band);
+}
+
+.recommendationRight {
+  border-left-color: var(--kl-primary);
+}
+
+.recommendationSupport {
+  border-left-color: var(--kl-success);
+}
+
+.recommendationQuestion {
+  border-left-color: var(--kl-warning);
+}
+
+.recommendationLaw {
+  border-left-color: var(--kl-primary);
+}
+
+.recommendationHeader {
+  display: flex;
+  gap: 14px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.cardArrow {
+  color: var(--kl-primary);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.cardHint {
+  padding: 12px 14px;
+  border: var(--kl-border-subtle-line);
+  border-radius: var(--kl-radius-md);
+  background: var(--kl-surface-elevated);
+  color: var(--kl-text-secondary);
+}
+
+.lawRef {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--kl-border);
+  border-radius: var(--kl-radius-sm);
+  background: var(--kl-primary-light);
+  color: var(--kl-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 671px) {
+  .optionRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .optionChip {
+    width: 100%;
+  }
+}

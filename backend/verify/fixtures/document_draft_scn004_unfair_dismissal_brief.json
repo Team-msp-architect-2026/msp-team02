@@ -1,0 +1,142 @@
+{
+  "case_intake": {
+    "scenario_id": "SCN-004",
+    "document_type": "labor_commission_unfair_dismissal_brief",
+    "language": "ko",
+    "worker_info": {
+      "name_or_placeholder": "[근로자 이름 확인 필요]",
+      "nationality": null,
+      "preferred_language": "ko"
+    },
+    "employer_info": {
+      "company_name_or_placeholder": "[회사명 확인 필요]",
+      "representative_name": null,
+      "workplace_address": null,
+      "employee_count": 4,
+      "employee_count_over_5": false,
+      "workplace_jurisdiction": null
+    },
+    "employment_info": {
+      "start_date": "2025-01-01",
+      "last_work_date": "2025-11-30",
+      "job_title": "[직무 확인 필요]",
+      "wage_terms": "[임금 조건 확인 필요]",
+      "wage_type": "monthly",
+      "wage_payment_day": 25,
+      "employment_contract_exists": null,
+      "continuous_service_over_1_year": null
+    },
+    "dismissal_info": {
+      "dismissal_notice_date": "2025-11-29",
+      "dismissal_effective_date": "2025-11-30",
+      "notice_method": "kakaotalk",
+      "written_notice_received": false,
+      "dismissal_reason_provided": false,
+      "dismissal_reason": null,
+      "advance_notice_30_days": false,
+      "reinstatement_requested": null,
+      "monetary_compensation_requested": null,
+      "opportunity_to_explain": false,
+      "prior_disciplinary_action": false
+    },
+    "unpaid_wage_info": {},
+    "incident_timeline": [
+      {
+        "date": "2025-11-29",
+        "event": "카카오톡으로 다음 날부터 출근하지 말라는 통보를 받았다고 진술함",
+        "evidence_refs": ["해고 통보 메시지 placeholder"]
+      }
+    ],
+    "claims": [
+      "unfair_dismissal",
+      "no_written_dismissal_notice",
+      "no_advance_dismissal_notice"
+    ],
+    "evidence_items": [
+      {
+        "type": "message",
+        "description": "해고 통보 메시지 placeholder",
+        "status": "available"
+      },
+      {
+        "type": "employment_contract",
+        "description": "근로계약서 placeholder",
+        "status": "needs_collection"
+      }
+    ],
+    "requested_actions": [],
+    "intake_notes": "SCN-004 smoke fixture: placeholder only"
+  },
+  "legal_basis": {
+    "answer_query": "SCN-004 부당해고 구제신청 답변 placeholder",
+    "answer": "부당해고 여부와 절차 위반은 제공된 법적 근거 범위에서 확인합니다.",
+    "key_points": [
+      "해고의 정당한 이유 확인",
+      "해고예고 여부 확인",
+      "서면통지 여부 확인",
+      "구제신청 기간 확인"
+    ],
+    "cautions": [],
+    "cited_articles": [
+      "근로기준법 제23조 (해고 등의 제한)",
+      "근로기준법 제26조 (해고의 예고)",
+      "근로기준법 제27조 (해고사유 등의 서면통지)",
+      "근로기준법 제28조 (부당해고등의 구제신청)"
+    ],
+    "source_context_ids": [23, 26, 27, 28],
+    "retrieved_chunks": [
+      {
+        "context_id": 23,
+        "chunk_id": "근로기준법__제23조__ord01__mst276849__4845c83b52e1",
+        "citation_label": "근로기준법 제23조 (해고 등의 제한)",
+        "law_name": "근로기준법",
+        "article_no": "제23조",
+        "article_title": "해고 등의 제한",
+        "paragraph_no": null,
+        "content": "정당한 이유 없는 해고 제한을 검토할 때 쓰는 조문입니다.",
+        "similarity": 0.94,
+        "tier": 1,
+        "structure_path": "제2장 근로계약"
+      },
+      {
+        "context_id": 26,
+        "chunk_id": "근로기준법__제26조__ord01__mst276849__ecaf9fd94514",
+        "citation_label": "근로기준법 제26조 (해고의 예고)",
+        "law_name": "근로기준법",
+        "article_no": "제26조",
+        "article_title": "해고의 예고",
+        "paragraph_no": null,
+        "content": "해고예고와 해고예고수당 쟁점을 검토할 때 쓰는 조문입니다.",
+        "similarity": 0.9,
+        "tier": 1,
+        "structure_path": "제2장 근로계약"
+      },
+      {
+        "context_id": 27,
+        "chunk_id": "근로기준법__제27조__ord01__mst276849__259941fcf81c",
+        "citation_label": "근로기준법 제27조 (해고사유 등의 서면통지)",
+        "law_name": "근로기준법",
+        "article_no": "제27조",
+        "article_title": "해고사유 등의 서면통지",
+        "paragraph_no": null,
+        "content": "해고 사유와 시기의 서면통지 여부를 검토할 때 쓰는 조문입니다.",
+        "similarity": 0.92,
+        "tier": 1,
+        "structure_path": "제2장 근로계약"
+      },
+      {
+        "context_id": 28,
+        "chunk_id": "근로기준법__제28조__ord01__mst276849__861c8d947966",
+        "citation_label": "근로기준법 제28조 (부당해고등의 구제신청)",
+        "law_name": "근로기준법",
+        "article_no": "제28조",
+        "article_title": "부당해고등의 구제신청",
+        "paragraph_no": null,
+        "content": "부당해고 구제신청 절차와 3개월 기한을 검토할 때 쓰는 조문입니다.",
+        "similarity": 0.93,
+        "tier": 1,
+        "structure_path": "제2장 근로계약"
+      }
+    ]
+  }
+}

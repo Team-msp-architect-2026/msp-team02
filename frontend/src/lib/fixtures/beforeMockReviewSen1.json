@@ -1,0 +1,116 @@
+{
+  "review_id": "e4a0fb62-cbb4-4136-ac6a-8a96fb66050f",
+  "reviewed_at": "2026-04-21T06:45:45.336735+00:00",
+  "uploaded_files": [],
+  "contract_info": {
+    "type": "단시간근로자",
+    "employer": "예시 편의점",
+    "employee": "근로자 A",
+    "start_date": "2026-04-01"
+  },
+  "overall_result": "VIOLATION",
+  "overall_severity": "CRITICAL",
+  "summary": "minimum_wage 위반(HIGH), 5항 내용 위반, 9항 내용 위반, 1항 주의 필요, 6항 주의 필요, 7항 주의 필요 발견.",
+  "rule_check": {
+    "minimum_wage": {
+      "status": "VIOLATION",
+      "severity": "HIGH",
+      "wage_type": "시간급",
+      "stated_amount": 9500,
+      "calc_daily_hours": 4.5,
+      "days_per_week": 5,
+      "weekly_hours": 22.5,
+      "juyu_hours": 4.5,
+      "juyu_applied": true,
+      "total_weekly_hours": 27.0,
+      "monthly_hours": 117.32,
+      "calc_hourly": 9500.0,
+      "minimum_wage_year": 2026,
+      "min_hourly": 10320,
+      "min_monthly_209h": 2156880,
+      "shortfall": 820.0,
+      "message": "시간급 9,500원 기준, 1일 4.5시간·주 5일 (주 소정 22.5시간, 주휴 4.5시간 반영) → 월 환산 117.32시간, 시급 9,500원 < 최저임금 10,320원 (부족: 820원)"
+    },
+    "working_hours": {
+      "status": "PASS",
+      "severity": "NONE",
+      "stated_daily": 5.0,
+      "actual_daily": 4.5,
+      "break_hours": 0.5,
+      "legal_max_daily": 8.0,
+      "law_ref": "근로기준법 제50조",
+      "message": "업무시간 5.0시간 중 휴게 0.5시간 제외 실근로 4.5시간 (법정 8시간 이내)"
+    },
+    "break_time": {
+      "status": "PASS",
+      "severity": "NONE",
+      "gross_work_hours": 5.0,
+      "break_minutes": 30,
+      "required_break_min": 30,
+      "law_ref": "근로기준법 제54조",
+      "message": "총 근무 5.0시간에 휴게 30분 (적정)"
+    },
+    "payment_day": {
+      "status": "PASS",
+      "severity": "NONE",
+      "payment_day": 25,
+      "law_ref": "근로기준법 제43조",
+      "message": "임금지급일 매월 25일로 명시됨"
+    }
+  },
+  "ocr_warnings": [
+    {
+      "field": "working_hours.daily_hours",
+      "structured": 5.0,
+      "corrected": 4.5,
+      "note": "OCR 오류 또는 계약서 기재 오류 — 재계산값 사용"
+    }
+  ],
+  "user_explanation": {
+    "headline": "수정이 필요한 계약서입니다.",
+    "plain_language_summary": "근로자 A 님의 단시간근로자 계약서를 검토한 결과, 임금 조항에서는 계약서상 시급 9,500원이 2026년 최저임금 10,320원보다 낮아 바로 수정이 필요합니다. 표준 계약서와 비교하면 누락 항목 1개, 추가 항목 1개가 있어 전체 형식도 함께 점검해야 합니다.",
+    "overall_assessment": [
+      "임금 수준은 2026년 최저임금 기준인 시간당 10,320원에 미달하는 것으로 확인됐습니다.",
+      "표준 계약서와 다른 항목이 있어 계약서 형식과 내용이 함께 수정돼야 합니다."
+    ],
+    "important_points": [
+      {
+        "title": "임금 조항",
+        "status": "VIOLATION",
+        "severity": "HIGH",
+        "law_ref": "최저임금법 제6조 (최저임금의 효력)",
+        "issue_type": "mandatory_terms_missing",
+        "risk_bucket": "mandatory_missing",
+        "description": "적용 기준: 2026년 최저임금. 시간급 9,500원 기준, 1일 4.5시간·주 5일 (주 소정 22.5시간, 주휴 4.5시간 반영) → 월 환산 117.32시간, 시급 9,500원 < 최저임금 10,320원 (부족: 820원)"
+      },
+      {
+        "title": "근로계약기간 조항",
+        "status": "WARNING",
+        "severity": "MEDIUM",
+        "law_ref": "근로기준법 제4조 (근로조건의 결정)",
+        "issue_type": "standard_form_misuse",
+        "risk_bucket": "enforceability_risk",
+        "description": "근로계약기간을 '2026년 4월 1 일부터'로만 명시하고 종료일을 기재하지 않아, 기간의 정함이 있는 근로계약인지, 아니면 기간의 정함이 없는 근로계약인지 불분명합니다. 이는 근로계약의 핵심적인 내용에 대한 불명확성을 야기하며, 향후 근로관계 종료 시 분쟁의 소지가 될 수 있습니다. 특히, 주석에 '년 월 일까지' 기재를 안내하고 있음에도 이를 따르지 않아 혼란을 가중시킵니다."
+      }
+    ],
+    "recommended_actions": [
+      "시간급을 최소 10,320원 이상으로 수정하세요.",
+      "표준 계약서와 다른 항목이 있는지 확인하고, 불필요한 특약이나 누락된 항목을 정리하세요."
+    ],
+    "evidence": [
+      {
+        "title": "임금 조항 원문",
+        "excerpt": "5. 임금\n- 시간(일, 월)급 : 9500 원\n- 상여금 : 없음 ( ) 원, 없음 [✓]\n- 그 밖의 수당(약정수당) : 없음 [ ], 없음 [✓]\n원,\n- 초과근로에 대한 가산임금률 : 50 %\n※ 단시간근로자의 1주간 소정근로시간이 근로기준법에 정한 시간을 초과하여 근로하면 법정 근로시간 내라도 통상임금의 100분의 50 이상을 가산하여 지급(제2조 제1항).\n- 임금지급일 : 매월(매주 또는 매일) 25 일 (휴일의 "
+      },
+      {
+        "title": "근로시간 조항 원문",
+        "excerpt": "4. 근로일 및 근로일별 근로시간\n(요일)요일 월요일 화요일 수요일 목요일 금요일\n근로시간 4.5 4.5 4.5 4.5 4.5\n업무 시작 9시00분 9시00분 9시00분 9시00분 9시00분\n업무 종료 14시00분 14시00분 14시00분 14시00분 14시00분\n휴게 시간 12시00분 ~ 12시30분 12시00분 ~ 12시30분 12시00분 ~ 12시30분 12시00분 ~ 12시30분 12시00분 ~ 12시30분\n○ 주휴일 "
+      },
+      {
+        "title": "누락 항목",
+        "excerpt": "근로개시일"
+      }
+    ],
+    "markdown": "<!-- fixture copied from latest successful before review_result.json for sen1 demo -->"
+  }
+}
