@@ -139,8 +139,9 @@ API 상세 경로와 요청/응답 구조는 [API Endpoints & Schemas](https://g
 - 임금체불·부당해고 상담 → 지원되는 문서 초안
 - 로그인 사용자용 계약서 검토 / 사건 기록 / 기록 삭제(목록에서 숨김)
 - 계약서 검토 결과를 AI 법률 상담에 연결
-- 공개 데모 도메인 `https://www.law-main-road.cloud` 연결, YouTube 시연 영상 및 MP4 백업
 - `사업장 변경 사유 정리서 초안` 예시 작성 흐름
+
+공모전 기간에는 공개 데모 도메인을 연결했고, 지금은 YouTube 시연 영상과 MP4 백업으로 확인할 수 있습니다.
 
 **현재 미제공:**
 
@@ -149,7 +150,7 @@ API 상세 경로와 요청/응답 구조는 [API Endpoints & Schemas](https://g
 - 추가 문서 유형 및 시나리오, 완전 삭제·파일 물리 삭제·계정 삭제·복구·보관 기간 정책
 - 장기 운영 배포 선언, root apex `law-main-road.cloud`, `api.` 서브도메인, `/api/**` 동일 도메인 라우팅, HTTPS Load Balancer, Cloud Armor
 
-**클라우드 단계:** `dev` → **`demo/contest` (현재)** → `prod` (미선언)
+**클라우드 단계:** `dev` → `demo/contest` (공모전 뒤 자원 정리) → `prod` (미선언)
 
 > `사업장 변경 사유 정리서 초안`은 화면에서 제공하는 **예시 작성 흐름**이며, 서버에서 실시간으로 계약서 검토 기반 초안을 생성한다는 의미가 아닙니다. 상세 정책은 [Cloud Migration & Public Mirror Policy](https://github.com/Team-msp-architect-2026/msp-team02/wiki/Cloud-Migration-and-Public-Mirror-Policy) 참고.
 
@@ -170,7 +171,7 @@ API 상세 경로와 요청/응답 구조는 [API Endpoints & Schemas](https://g
 
 ## 개발 실행 안내
 
-개발·배포 자동화 기준은 접근 권한이 필요한 내부 source/deploy 저장소에서 관리합니다. 이 공개 저장소만 clone한 경우 runnable source tree가 포함되지 않을 수 있습니다.
+개발과 배포 자동화 기준은 메인 저장소 [`law_main_road_main`](https://github.com/2026-moel-datacontest-core/law_main_road_main)에서 관리합니다. 이 공개 저장소만 clone한 경우 runnable source tree가 포함되지 않을 수 있습니다.
 
 **Backend**
 
